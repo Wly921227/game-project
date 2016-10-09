@@ -13,6 +13,8 @@ class AppComponent extends Component {
     render() {
         return <div className="app-component">
             hallo word!
+            <br/>
+            test hot loading
         </div>
     }
 }

@@ -23,5 +23,10 @@ module.exports = [
         test: /\.css?$/,
         exclude: /(node_modules)/,
         loader: 'style!css'
+    },
+    // images
+    {
+        test: /\.(png|jpg)$/,
+        loader: 'url?limit=1000000'   // 单位b
     }
 ]

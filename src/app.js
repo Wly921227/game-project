@@ -5,7 +5,7 @@
 var React = require('react')
 var ReactDOM = require('react-dom')
 
-let AppComponent = require('./components/appComponent')
+let AppComponent = require('common/components/appComponent')
 
 ReactDOM.render(
     <AppComponent/>,

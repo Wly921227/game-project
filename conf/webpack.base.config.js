@@ -15,6 +15,12 @@ module.exports = {
     //     path: path.resolve(__dirname, '../dist'),
     //     filename: 'bundle.js'
     // },
+    resolve: {
+        alias: {
+            'common': path.resolve(__dirname, '../src/common'),
+            'images': path.resolve(__dirname, '../src/images')
+        }
+    },
     module: {
         loaders: loaders
     }

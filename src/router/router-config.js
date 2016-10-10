@@ -2,15 +2,28 @@
  * Created by wangluyuan on 16/10/10.
  */
 
-const config = [{
-    path: '/',
-    children: [
+const config = {
+    routes: [
         {
-            path: '/hallo',
-            component: require('common/components/hallo')
+            path: '/',
+            component: require('common/components/app'),
+            children: [
+                {
+                    path: 'hallo',
+                    component: require('common/components/hallo')
+                }
+            ]
         }
     ],
-    component: require('common/components/app')
-}]
+    onError: {
+        path: '',
+        component: require('common/components/app'),
+        children: {
+            path: '*',
+            component: require('common/components/404')
+        }
+    },
+    index: {}
+}
 
 module.exports = config

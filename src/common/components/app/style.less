@@ -1,0 +1,39 @@
+@blue: #188fbc;
+@white: #fff;
+@bbb: #bbb;
+
+.app-component {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  &:before {
+    vertical-align: middle;
+    display: inline-block;
+    content: ' ';
+    height: 100%;
+    width: 0;;
+  }
+  .body {
+    vertical-align: middle;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    .main {
+      width: 40%;
+      min-height: 100px;
+      padding: 20px 0;
+      display: inline-block;
+      background: @white;
+      border-radius: 7px;
+      border: 1px solid @bbb;
+      box-sizing: border-box;
+    }
+  }
+}
+
+.bg1 {
+  background: url(~images/bg1.jpg) no-repeat;
+  background-size: 100% 100%;
+}

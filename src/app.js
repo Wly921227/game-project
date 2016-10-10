@@ -4,10 +4,9 @@
 
 var React = require('react')
 var ReactDOM = require('react-dom')
-
-let AppComponent = require('common/components/appComponent')
+let Routers = require('./router')
 
 ReactDOM.render(
-    <AppComponent/>,
+    <Routers/>,
     document.getElementById('main')
 )

@@ -16,13 +16,13 @@ module.exports = [
     {
         test: /\.less?$/,
         exclude: /(node_modules)/,
-        loader: 'style!css!less'
+        loader: 'style!css!less!autoprefixer?browsers=last 2 version&remove=false'
     },
     // css
     {
         test: /\.css?$/,
         exclude: /(node_modules)/,
-        loader: 'style!css'
+        loader: 'style!css!autoprefixer?browsers=last 2 version&remove=false'
     },
     // images
     {

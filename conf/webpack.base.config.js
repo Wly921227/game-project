@@ -3,38 +3,19 @@
  */
 
 var path = require('path')
+var loaders = require('./loaders')
 
 module.exports = {
-    entry: [
-        path.resolve(__dirname, '../src/app.js')
-    ],
-    output: {
-        path: path.resolve(__dirname, '../dist'),
-        filename: 'bundle.js'
-    },
-    module: {
-        loaders: [
-            // JSX
-            {
-                test: /\.js?$/,
-                exclude: /(node_modules)/,
-                loader: 'babel', // 'babel-loader' is also a legal name to reference
-                query: {
-                    presets: ['react', 'es2015']
-                }
-            },
-            // less
-            {
-                test: /\.less?$/,
-                exclude: /(node_modules)/,
-                loader: 'style!css!less'
-            },
-            // css
-            {
-                test: /\.css?$/,
-                exclude: /(node_modules)/,
-                loader: 'style!css'
-            }
+    entry: {
+        app: [
+            path.resolve(__dirname, '../src/app.js')
         ]
+    },
+    // output: {
+    //     path: path.resolve(__dirname, '../dist'),
+    //     filename: 'bundle.js'
+    // },
+    module: {
+        loaders: loaders
     }
 }

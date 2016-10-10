@@ -4,46 +4,46 @@
 
 var path = require('path')
 var webpack = require('webpack')
+var HtmlWebpackPlugin = require('html-webpack-plugin')
+var webpackBase = require('./webpack.base.config')
+
+var port = 8080
+var httpPath = 'http://localhost:' + port + '/'
+var config = Object.assign(webpackBase, {
+    devtool: 'cheap-module-eval-source-map'
+})
+
+Object.getOwnPropertyNames((webpackBase.entry || {})).map(function (name) {
+    config.entry[name] = []
+    //添加HMR文件
+        .concat('webpack/hot/dev-server')
+        .concat('webpack-dev-server/client?' + httpPath)
+        .concat(webpackBase.entry[name])
+})
+
+// 输出目录
+config.output = {
+    path: path.resolve(__dirname, '../static/'),
+    publicPath: httpPath,
+    filename: '[name].bundle.js'
+}
+
+// 插件
+config.plugins = (webpackBase.plugins || []).concat(
+    new webpack.DefinePlugin({
+        'process.env.NODE.ENV': 'development'
+    }),
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin(),
+    new HtmlWebpackPlugin({
+        filename: 'index.html',
+        template: path.resolve(__dirname, './template/index.dev.html'),
+        inject: true
+    })
+)
 
 module.exports = {
-    entry: {
-        app: [
-            path.resolve(__dirname, '../src/app.js')
-        ]
-    },
-    output: {
-        path: path.resolve(__dirname, '../static/'),
-        filename: '[name].bundle.js'
-    },
-    plugins: [
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.DefinePlugin({
-            'process.env.NODE.ENV':"development"
-        })
-    ],
-    module: {
-        loaders: [
-            // JSX
-            {
-                test: /\.js?$/,
-                exclude: /(node_modules)/,
-                loader: 'babel', // 'babel-loader' is also a legal name to reference
-                query: {
-                    presets: ['react', 'es2015']
-                }
-            },
-            // less
-            {
-                test: /\.less?$/,
-                exclude: /(node_modules)/,
-                loader: 'style!css!less'
-            },
-            // css
-            {
-                test: /\.css?$/,
-                exclude: /(node_modules)/,
-                loader: 'style!css'
-            }
-        ]
-    }
+    config,
+    port
 }

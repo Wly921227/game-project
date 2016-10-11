@@ -10,22 +10,27 @@ var webpackBase = require('./webpack.base.config')
 var port = 8080
 var httpPath = 'http://localhost:' + port + '/'
 var config = Object.assign(webpackBase, {
-    devtool: 'cheap-module-eval-source-map'
+    devtool: 'source-map'
 })
 
 Object.getOwnPropertyNames((webpackBase.entry || {})).map(function (name) {
     config.entry[name] = []
     //添加HMR文件
-        .concat('webpack/hot/dev-server')
         .concat('webpack-dev-server/client?' + httpPath)
+        .concat('webpack/hot/dev-server')
         .concat(webpackBase.entry[name])
 })
 
 // 输出目录
 config.output = {
     path: path.resolve(__dirname, '../static/'),
-    publicPath: '/',
+    publicPath: httpPath,
     filename: '[name].bundle.js'
+}
+
+// webpack-dev-server
+config.devServer = {
+    inline: true
 }
 
 // 插件

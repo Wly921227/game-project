@@ -12,3 +12,14 @@ ReactDOM.render(
     <Routers/>,
     document.getElementById('main')
 )
+
+if (module.hot) {
+    module.hot.accept('./router', () => {
+        const NextApp = require('./router');
+
+        ReactDOM.render(
+            <NextApp/>,
+            document.getElementById('main')
+        );
+    });
+}

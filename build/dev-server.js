@@ -12,12 +12,12 @@ var devConfig = require('../conf/webpack.dev.config')
 var compiler = webpack(devConfig.config)
 
 var server = new WebpackDevServer(compiler, {
-    // stats: {
-    //     chunks: false,
-    //     hash: false,
-    //     colors: {level: 2, hasBasic: true, has256: true, has16m: true}
-    // },
-    publicPath: '/',
+    stats: {
+        chunks: false,
+        hash: false,
+        colors: true
+    },
+    publicPath: devConfig.config.output.publicPath,
     inline: true,
     hot: true
 })

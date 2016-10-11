@@ -9,7 +9,18 @@ module.exports = [
     {
         test: /\.js?$/,
         exclude: /(node_modules)/,
-        loader: 'babel' // 'babel-loader' is also a legal name to reference
+        loader: 'babel', // 'babel-loader' is also a legal name to reference
+        query: {
+            plugins: [
+                'transform-decorators-legacy',
+                'react-hot-loader/babel'
+            ],   /// 使用decorator写法
+            presets: [
+                'es2015',
+                'stage-2',
+                'react'
+            ]
+        }
     },
     // less
     {

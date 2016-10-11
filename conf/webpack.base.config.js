@@ -23,5 +23,6 @@ module.exports = {
     },
     module: {
         loaders: loaders
-    }
+    },
+    plugins: []
 }

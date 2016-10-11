@@ -5,8 +5,8 @@
 var path = require('path')
 var webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
-var webpackBase = require('./webpack.base.config')
 
+var webpackBase = require('./webpack.base.config')
 var port = 8080
 var httpPath = 'http://localhost:' + port + '/'
 var config = Object.assign(webpackBase, {
@@ -24,7 +24,7 @@ Object.getOwnPropertyNames((webpackBase.entry || {})).map(function (name) {
 // 输出目录
 config.output = {
     path: path.resolve(__dirname, '../static/'),
-    publicPath: httpPath,
+    publicPath: '/',
     filename: '[name].bundle.js'
 }
 

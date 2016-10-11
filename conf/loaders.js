@@ -2,15 +2,14 @@
  * Created by wangluyuan on 16/10/10.
  */
 
+var path = require('path')
+
 module.exports = [
-    // JSX
+    // JS
     {
         test: /\.js?$/,
         exclude: /(node_modules)/,
-        loader: 'babel', // 'babel-loader' is also a legal name to reference
-        query: {
-            presets: ['react', 'es2015']
-        }
+        loader: 'babel' // 'babel-loader' is also a legal name to reference
     },
     // less
     {

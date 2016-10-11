@@ -11,6 +11,10 @@ const config = {
                 {
                     path: 'hallo',
                     component: require('common/components/hallo')
+                },
+                {
+                    path: 'countdown',
+                    component: require('common/components/countdown')
                 }
             ]
         }

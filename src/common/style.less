@@ -1,0 +1,77 @@
+@success: #1bc98e;
+@warning: #e4d836;
+@error: #e64759;
+@info: #9f86ff;
+@default: #1ca8dd;
+@quit: #eee;
+@line: #ccc;
+@font: #fff;
+@333: #333;
+@666: #666;
+@999: #999;
+
+@height: 35px;
+@font-size: 18px;
+
+.btn {
+  color: @font;
+  height: @height;
+  padding: 0 15px;
+  border: none;
+  border-radius: 5px;
+  background: @default;
+  line-height: @height;
+  display: inline-block;
+  margin: 5px;
+  box-sizing: border-box;
+  vertical-align: middle;
+  .btn-success {
+    background: @success;
+  }
+}
+
+.input {
+  color: @666;
+  height: @height;
+  border: 1px solid @line;
+  padding: 0 15px;
+  border-radius: 17px;
+  box-sizing: border-box;
+  display: inline-block;
+  margin: 5px;
+  font-size: @font-size;
+  vertical-align: middle;
+  .btn-success {
+    border-color: @success;
+  }
+}
+
+.label {
+  color: @666;
+  line-height: @height;
+}
+
+.success {
+  color: @success;
+}
+
+.warning {
+  color: @warning;
+}
+
+.error {
+  color: @error;
+}
+
+.info {
+  color: @info;
+}
+
+.default {
+  color: @default;
+}
+
+body {
+  font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+  font-size: @font-size;
+}

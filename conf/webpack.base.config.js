@@ -19,7 +19,8 @@ module.exports = {
         alias: {
             'common': path.resolve(__dirname, '../src/common'),
             'images': path.resolve(__dirname, '../src/images')
-        }
+        },
+        extensions: ['', '.js', '.json', '.less', '.css']
     },
     module: {
         loaders: loaders

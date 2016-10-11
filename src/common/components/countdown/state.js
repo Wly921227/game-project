@@ -9,15 +9,16 @@ class State {
     @observable num = 0
 
     constructor() {
-        console.log(this)
-        let interval = setInterval(() => {
-            this.time -= 1
-            if (this.time === 0) {
-                clearInterval(interval)
-            }
+        this.interval = setInterval(() => {
+            this.countdown()
         }, 1000)
+    }
 
-        console.log(this.num)
+    countdown() {
+        this.time -= 1
+        if (this.time <= 0) {
+            clearInterval(this.interval)
+        }
     }
 
     setNum(num) {
@@ -30,6 +31,10 @@ class State {
         } else {
             this.time = 100
         }
+        clearInterval(this.interval)
+        this.interval = setInterval(() => {
+            this.countdown()
+        }, 1000)
     }
 }
 

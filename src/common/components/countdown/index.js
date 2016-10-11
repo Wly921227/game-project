@@ -31,9 +31,15 @@ class CountDown extends React.Component {
         }
 
         return <div>
-            <input type="text" value={num} onChange={setNum}/>
-            <button onClick={clickResetTime}>重置</button>
-            <div>剩余时间: {time}</div>
+            <div>
+                <input className="input" type="text" value={num} onChange={setNum}/>
+                <button className="btn btn-default" onClick={clickResetTime}>重置</button>
+            </div>
+            <div>
+                <label className="label label-default">
+                    剩余时间: <span className={time <= 10 ? 'warning' : 'success'}>{time}</span>
+                </label>
+            </div>
         </div>
     }
 }

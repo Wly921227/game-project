@@ -18,6 +18,7 @@ module.exports = {
     resolve: {
         alias: {
             'common': path.resolve(__dirname, '../src/common'),
+            'pages': path.resolve(__dirname, '../src/pages'),
             'images': path.resolve(__dirname, '../src/images')
         },
         extensions: ['', '.js', '.json', '.less', '.css']

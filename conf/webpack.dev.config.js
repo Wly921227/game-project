@@ -9,8 +9,9 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 var webpackBase = require('./webpack.base.config')
 var port = 8080
 var httpPath = 'http://localhost:' + port + '/'
+
 var config = Object.assign(webpackBase, {
-    devtool: 'source-map'
+    devtool: 'source-map'   // 控制台代码映射
 })
 
 Object.getOwnPropertyNames((webpackBase.entry || {})).map(function (name) {
@@ -26,11 +27,6 @@ config.output = {
     path: path.resolve(__dirname, '../static/'),
     publicPath: httpPath,
     filename: '[name].bundle.js'
-}
-
-// webpack-dev-server
-config.devServer = {
-    inline: true
 }
 
 // 插件

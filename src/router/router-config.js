@@ -15,8 +15,21 @@ const config = {
                 {
                     path: 'countdown',
                     component: require('common/components/countdown')
+                },
+                {
+                    path: 'menu',
+                    component: require('pages/menu'),
+                    children: [
+                        // {
+                        //     path: 'mineClearance'
+                        // }
+                    ]
                 }
             ]
+        },
+        {
+            path: '/demo',
+            component: require('pages/demo')
         }
     ],
     onError: {

@@ -1,0 +1,57 @@
+.block-item {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  background: #eee;
+  border: 1px solid #999;
+  box-sizing: border-box;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  &> div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+  .num-value {
+    font-size: 18px;
+    line-height: 25px;
+    &.num1 {
+      color: #05b7ff;
+    }
+    &.num2 {
+      color: #08ff9e;
+    }
+    &.num3 {
+      color: #ebff00;
+    }
+    &.num4 {
+      color: #ff9700;
+    }
+    &.num5 {
+      color: #ff1100;
+    }
+    &.num6 {
+      color: #ff0078;
+    }
+    &.num7 {
+      color: #ff00ff;
+    }
+    &.num8 {
+      color: #7602ff;
+    }
+  }
+  .close {
+    background: #ccc;
+    cursor: pointer;
+    box-shadow: inset 0 0 1px 1px #999;
+  }
+  .mine {
+    background: url(~images/mineClearance/boom.png) no-repeat;
+    background-size: 90% 90%;
+    background-position: center;
+  }
+}

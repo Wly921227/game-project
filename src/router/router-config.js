@@ -5,25 +5,24 @@
 const config = {
     routes: [
         {
-            path: '/',
+            path: '',
             component: require('common/components/app'),
             children: [
                 {
-                    path: 'hallo',
+                    path: '/hallo',
                     component: require('common/components/hallo')
                 },
                 {
-                    path: 'countdown',
+                    path: '/countdown',
                     component: require('common/components/countdown')
                 },
                 {
-                    path: 'menu',
-                    component: require('pages/menu'),
-                    children: [
-                        // {
-                        //     path: 'mineClearance'
-                        // }
-                    ]
+                    path: '/menu',
+                    component: require('pages/menu')
+                },
+                {
+                    path: '/mineClearance',
+                    component: require('pages/mineClearance')
                 }
             ]
         },

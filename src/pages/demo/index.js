@@ -15,19 +15,22 @@ class Demo extends React.Component {
         let appState = new AppState()
         this.setState({appState: appState})
     }
+
+    inputValue(event) {
+        this.state.appState.input = event.target.value
+    }
     
     render() {
         let {
             appState
         } = this.state
 
-        let inputValue = (event) => {
-            appState.input = event.target.value
-        }
-        
         return <div>
             <div>
-                <input type="text" className="input" value={appState.input} onInput={inputValue}/>
+                <input type="text" className="input"
+                       value={appState.input}
+                       onInput={this.inputValue.bind(this)}/>
+                <div className="label">{appState.input}</div>
             </div>
         </div>
     }

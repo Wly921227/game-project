@@ -22,21 +22,22 @@ class Block extends React.Component {
         }
     }
 
-    clickBlock(state) {
-        state.open = true
-    }
-
     render() {
-
         let {
-            state
+            state,
+            open
         } = this.props
 
-        return <div className="block-item" onClick={this.clickBlock.bind(this, state)}>
+        let clickBlock = () => {
+            state.open = true
+            open(state)
+        }
+
+        return <div className="block-item">
             {
                 state.open ?
                     this.getBlockState(state.state)
-                    : <div className="close"></div>
+                    : <div className="close" onClick={clickBlock}></div>
             }
         </div>
     }

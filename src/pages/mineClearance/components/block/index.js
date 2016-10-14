@@ -28,16 +28,26 @@ class Block extends React.Component {
             open
         } = this.props
 
-        let clickBlock = () => {
+        let clickBlock = (event) => {
+            event.stopPropagation()
+            event.preventDefault()
+            console.log(event.button)
             state.open = true
             open(state)
+        }
+
+        let clickContextMenu = (event) => {
+            event.stopPropagation()
+            event.preventDefault()
+
+            console.log('右键')
         }
 
         return <div className="block-item">
             {
                 state.open ?
                     this.getBlockState(state.state)
-                    : <div className="close" onClick={clickBlock}></div>
+                    : <div className="close" onClick={clickBlock} onContextMenu={clickContextMenu}></div>
             }
         </div>
     }

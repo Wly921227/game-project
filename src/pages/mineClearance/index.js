@@ -32,11 +32,11 @@ class MineClear extends React.Component {
         let appState = new AppState(parseInt(event.target.value))
         this.setState({appState: appState})
     }
-    
+
     onRestart() {
         this.state.appState.init()
     }
-    
+
     setOpenItem(point) {
         this.state.appState.openItem = point
     }

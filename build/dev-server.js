@@ -5,7 +5,6 @@
 // var path = require('path')
 var webpack = require('webpack')
 var WebpackDevServer = require('webpack-dev-server')
-var express = require('express')
 
 var devConfig = require('../conf/webpack.dev.config')
 

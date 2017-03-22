@@ -7,9 +7,8 @@ var loaders = require('./loaders')
 
 module.exports = {
     entry: {
-        app: [
-            path.resolve(__dirname, '../src/app.js')
-        ]
+        app: path.resolve(__dirname, '../src/app.js'),
+        vendor: ['react', 'react-dom', 'react-router', 'mobx', 'mobx-react']
     },
     // output: {
     //     path: path.resolve(__dirname, '../dist'),

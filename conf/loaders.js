@@ -5,7 +5,7 @@
 var path = require('path')
 
 module.exports = [
-    // JS
+    // js
     {
         test: /\.js?$/,
         exclude: /(node_modules)/,
@@ -32,11 +32,21 @@ module.exports = [
     {
         test: /\.css?$/,
         exclude: /(node_modules)/,
-        loader: 'style!css!autoprefixer?browsers=last 2 version&remove=false'
+        loader: 'style!css'
     },
     // images
     {
         test: /\.(png|jpg)$/,
         loader: 'url?limit=1000000'   // 单位b
+    },
+    // json
+    {
+        test: /\.json?$/,
+        loader: 'json'
+    },
+    // file
+    {
+        test: /\.md?$/,
+        loader: 'html'
     }
 ]

@@ -29,6 +29,18 @@ const config = {
         {
             path: '/demo',
             component: require('pages/demo')
+        },
+        {
+            path: '/data',
+            component: require('pages/makedata')
+        },
+        {
+            path: '/down',
+            component: require('pages/downfile')
+        },
+        {
+            path: '/test',
+            component: require('pages/test')
         }
     ],
     onError: {
@@ -36,7 +48,7 @@ const config = {
         component: require('common/components/app'),
         children: {
             path: '*',
-            component: require('common/components/404')
+            component: require('pages/menu')
         }
     },
     index: {}
